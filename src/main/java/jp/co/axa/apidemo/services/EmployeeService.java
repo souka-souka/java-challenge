@@ -4,15 +4,23 @@ import jp.co.axa.apidemo.entities.Employee;
 
 import java.util.List;
 
+/**
+ * EmployeeService interface
+ */
 public interface EmployeeService {
 
+    //Get all employees
     public List<Employee> retrieveEmployees();
 
+    //Get the employee by employeeId
     public Employee getEmployee(Long employeeId);
 
-    public void saveEmployee(Employee employee);
+    //Add the employee
+    public Employee saveEmployee(Employee employee);
 
-    public void deleteEmployee(Long employeeId);
+    //Delete the employee by employeeId
+    public boolean deleteEmployee(Long employeeId);
 
-    public void updateEmployee(Employee employee);
+    //Update the employee
+    public Employee updateEmployee(Employee employee);
 }

@@ -3,13 +3,13 @@ package jp.co.axa.apidemo.entities;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
+/**
+ *Employee JPA entity
+ */
 @Entity
 @Table(name="EMPLOYEE")
 public class Employee {
@@ -22,6 +22,8 @@ public class Employee {
 
     @Getter
     @Setter
+    @NotBlank(message = "Name is mandatory")
+    @Size(min = 4, max = 100, message = "Name must be between 4 and 100 characters")
     @Column(name="EMPLOYEE_NAME")
     private String name;
 

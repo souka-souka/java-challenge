@@ -44,9 +44,20 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 - No performance issues
 
 #### Your experience in Java
+-I've been working with Java for 3 years, of which 1 year specifically with SpringBoot.
 
-Please let us know more about your Java experience in a few sentences. For example:
+#### Comments:
+1. Add transaction and exception handler
+2. Added input validation
+3. made response to be json(contains message,result code etc.)
+4. Added authentication system using Spring Security,JWT and redis（caching logic）to protect controller end points:
+ 　※This function cannot be implemented in H2,so I create table in mysql. When create table in mysql,Don't forget to make id auto increment.
 
-- I have 3 years experience in Java and I started to use Spring Boot from last year
-- I'm a beginner and just recently learned Spring Boot
-- I know Spring Boot very well and have been using it for many years
+
+#### Left out of scope as don't have enough time:
+1. Entities should not be used for transfer data.
+2. message should be put in message.properties file or make them to be constant
+3. Logging and security audit logging
+4. Obtain permission information and encapsulate it into Authentication
+5. Caching logic for database calls can be used in toppages which is not be changed frequently, Employee information is not suitable
+
